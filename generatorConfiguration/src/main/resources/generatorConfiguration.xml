@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <!--    <classPathEntry location="" />-->
+    <!--    数据库地址账号密码-->
+    <context id="MySQLTables" targetRuntime="MyBatis3">
+        <!--http://mybatis.org/generator/configreference/commentGenerator.html
+        suppressAllComments值为true,意思是设置生成的代码不包含注释-->
+        <!--false生成注释，但是都是一些比较没有用的英文，建议直接-->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/bishe?useUnicode=true&amp;useSSL=false&amp;characterEncoding=utf-8&amp;serverTimezone=Asia/Shanghai"
+                        userId="root"
+                        password="123456">
+        </jdbcConnection>
+
+        <javaTypeResolver >
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+        <!--生成model类的存放位置-->
+        <javaModelGenerator targetPackage="com.xiaomi.newretail.bean" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+        <!--生成映射文件存放位置-->
+        <sqlMapGenerator targetPackage="mapping"  targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+        <!--生成Dao类的存放路径-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.xiaomi.newretail.dao" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+
+        <!--生成表级类名，直接复制添加即可-->
+        <table tableName="t_type" domainObjectName="Type"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+
+        </table>
+        <table tableName="t_news" domainObjectName="News"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+
+        </table>
+
+        <!--        <table tableName="t_worker" domainObjectName="WorkerDO"-->
+        <!--               enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--               enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--               selectByExampleQueryId="false">-->
+        <!--        </table>-->
+
+
+    </context>
+</generatorConfiguration>
