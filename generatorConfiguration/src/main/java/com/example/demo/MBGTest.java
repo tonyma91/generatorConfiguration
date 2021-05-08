@@ -18,7 +18,7 @@ import java.util.List;
 
 /**
  * @author majinming@xiaomi.com
- * @description
+ * @description  没有自动注释，使用的是 generatorConfiguration
  * @date 2021年 04月30日 11:11
  */
 
